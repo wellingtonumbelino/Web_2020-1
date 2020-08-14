@@ -6,6 +6,7 @@ import './styles/App.css';
 import Insert from './components/Insert';
 import Home from './components/Home';
 import List from './components/List';
+import Edit from './components/Edit';
 
 export default class App extends Component {
   render() {
@@ -34,6 +35,7 @@ export default class App extends Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/insert' component={Insert} />
+            <Route path='/edit/:id' component={Edit} />
             <Route path='/list' component={List} />
           </Switch>
 

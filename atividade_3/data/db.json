@@ -1,40 +1,16 @@
 {
   "disciplinas": [
     {
-      "id": 1,
-      "nome": "Desenvolvimento Web",
-      "curso": "Sistemas de Informação",
-      "capacidade": 50
-    },
-    {
-      "id": 2,
-      "nome": "FUP",
-      "curso": "Sistemas de Informação",
-      "capacidade": 25
-    },
-    {
       "nome": "Engenharia de Software",
-      "curso": "Sistemas de Informação",
+      "curso": "Ciência da Computação",
       "capacidade": "50",
       "id": 3
     },
     {
-      "nome": "LIP",
-      "curso": "Sistemas de Informação",
-      "capacidade": "40",
-      "id": 4
-    },
-    {
-      "nome": "ED",
-      "curso": "Engenharia da Computação",
-      "capacidade": "40",
-      "id": 5
-    },
-    {
-      "nome": "POO",
-      "curso": "Engenharia de Software",
-      "capacidade": "40",
-      "id": 6
+      "nome": "Lógica para Computação",
+      "curso": "Ciências da Computação",
+      "capacidade": "50",
+      "id": 7
     }
   ]
 }

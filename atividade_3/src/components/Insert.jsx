@@ -54,7 +54,7 @@ export default class Insert extends Component {
   render() {
     return (
       <div className='style'>
-        <h3 className>Criar Disciplina</h3>
+        <h3>Criar Disciplina</h3>
         {/* formulario de criação de uma disciplina */}
         <form onSubmit={this.onSubmit}>
           <div className='form-group'>

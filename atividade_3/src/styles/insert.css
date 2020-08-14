@@ -1,21 +1,3 @@
 .style{
   margin-top: 40px;
-  width: 450px;
-  height: 280px;
-  background-color: bisque;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.form-control{
-  width: 400px;
-  margin-left: 25px;
-}
-
-.form-control input{
-  width: 300px;
-}
-
-.btn{
-  margin-left: 260px;
 }
