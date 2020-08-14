@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+import '../styles/edit.css';
+
 export default class Edit extends Component {
 
   constructor(props) {
@@ -72,32 +74,29 @@ export default class Edit extends Component {
 
   render() {
     return (
-      <div style={{ marginTop: 10 }}>
+      <div className='style-edit'>
 
         <h3>Editar Disciplina</h3>
 
         <form onSubmit={this.onSubmit}>
 
           <div className="form-group">
-            <label>Nome: </label>
-            <input type="text" className="form-control"
+            <input type="text" className="form-control" placeholder='Nome'
               value={this.state.nome} onChange={this.setNome} />
           </div>
 
           <div className="form-group">
-            <label>Curso: </label>
-            <input type="text" className="form-control"
+            <input type="text" className="form-control" placeholder='Curso'
               value={this.state.curso} onChange={this.setCurso} />
           </div>
 
           <div className="form-group">
-            <label>Capacidade: </label>
-            <input type="text" className="form-control"
+            <input type="text" className="form-control" placeholder='Capacidade'
               value={this.state.capacidade} onChange={this.setCapacidade} />
           </div>
 
           <div className="form-group">
-            <input type="submit" value="Editar" className="btn btn-primary" />
+            <input type="submit" value="Editar Disciplina" className="btn btn-primary" />
           </div>
 
         </form>
