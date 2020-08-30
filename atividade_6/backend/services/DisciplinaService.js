@@ -32,8 +32,8 @@ class DisciplinaService {
         disc.nome = data.nome
         disc.curso = data.curso
         disc.capacidade = data.capacidade
+        return disc
       }
-      return disc;
     }
     return null;
   }
