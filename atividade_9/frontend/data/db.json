@@ -1,0 +1,16 @@
+{
+  "disciplinas": [
+    {
+      "nome": "Engenharia de Software",
+      "curso": "Ciência da Computação",
+      "capacidade": "50",
+      "id": 3
+    },
+    {
+      "nome": "Lógica para Computação",
+      "curso": "Ciências da Computação",
+      "capacidade": "50",
+      "id": 7
+    }
+  ]
+}
