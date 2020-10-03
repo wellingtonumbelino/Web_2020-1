@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import '../styles/edit.css';
 
 import FirebaseContext from '../utils/FirebaseContext';
+import FirebaseService from '../services/FirebaseService';
 
 const EditPage = (props) => (
   <FirebaseContext.Consumer>
@@ -44,31 +45,38 @@ class Edit extends Component {
   }
 
   componentDidMount() {
-    this.props.firebase.getFirestore().collection('disciplinas').doc(this.props.id).get()
-      .then(
-        (doc) => {
-          this.setState({
-            nome: doc.data().nome,
-            curso: doc.data().curso,
-            capacidade: doc.data().capacidade
-          })
-        }
-      )
-      .catch((error) => { console.log(error) });
+    FirebaseService.retrieve(this.props.firebase.getFirestore(), (disciplina) => {
+      if (disciplina) {
+        this.setState({
+          nome: disciplina.nome,
+          curso: disciplina.curso,
+          capacidade: disciplina.capacidade
+        });
+      }
+    }, this.props.id);
   }
 
   onSubmit(e) {
     e.preventDefault();
 
-    this.props.firebase.getFirestore().collection('disciplinas').doc(this.props.id).set(
-      {
-        nome: this.state.nome,
-        curso: this.state.curso,
-        capacidade: this.state.capacidade
-      }
-    )
-      .then(() => { console.log('Estudante Atualizado.') })
-      .cacth((error) => { console.log(error) });
+    const disciplina = {
+      nome: this.state.nome,
+      curso: this.state.curso,
+      capacidade: this.state.capacidade
+    }
+
+    FirebaseService.edit(
+      this.props.firebase.getFirestore(),
+      (mensagem) => {
+        if (mensagem === 'ok') {
+          console.log(`Disciplina atualizada com sucesso!`)
+        }
+      },
+      disciplina,
+      this.props.id
+    );
+
+    this.setState({ nome: '', curso: '', capacidade: '' });
   }
 
   render() {

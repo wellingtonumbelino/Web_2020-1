@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react';
 import FirebaseContext from '../utils/FirebaseContext';
 
 import '../styles/insert.css';
+import FirebaseService from '../services/FirebaseService';
 
 const CreatePage = () => (
   <FirebaseContext.Consumer>
@@ -37,15 +38,16 @@ class Insert extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    this.props.firebase.getFirestore().collection('disciplinas').add(
-      {
-        nome: this.state.nome,
-        curso: this.state.curso,
-        capacidade: this.state.capacidade,
+    const disciplina = {
+      nome: this.state.nome,
+      curso: this.state.curso,
+      capacidade: this.state.capacidade
+    }
+    FirebaseService.create(this.props.firebase.getFirestore(), (mensagem) => {
+      if (mensagem === 'ok') {
+        console.log(`Disciplina ${disciplina.nome} inserido`);
       }
-    )
-      .then(() => console.log(`Disciplinas ${this.state.nome} inserido com sucesso.`))
-      .catch(error => console.log(error));
+    }, disciplina);
 
     this.setState({ nome: '', curso: '', capacidade: '' });
   }
