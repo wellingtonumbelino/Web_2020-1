@@ -29,7 +29,7 @@ export default class Navigate extends Component {
 
     render() {
         return (
-            <Card title='Navegador'>
+            <Card title='Calculadora'>
                 <div className='navigate'>
                     <input
                         type='number'
